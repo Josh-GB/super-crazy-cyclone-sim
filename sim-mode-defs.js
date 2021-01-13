@@ -1195,7 +1195,7 @@ ENV_DEFS.defaults.moisture = {
     modifiers: {
         polarMoisture: 0.42,
         tropicalMoisture: 0.59,
-        mountainMoisture: 0.19
+        mountainMoisture: 0.59
     },
     noiseChannels: [
         [4,0.5,120,120,0.3,2]
@@ -1206,7 +1206,7 @@ ENV_DEFS[SIM_MODE_HYPER].moisture = {
     modifiers: {
         polarMoisture: 0.52,
         tropicalMoisture: 0.62,
-        mountainMoisture: 0.3
+        mountainMoisture: 0.62
     }
 };
 ENV_DEFS[SIM_MODE_WILD].moisture = {
@@ -1230,7 +1230,7 @@ ENV_DEFS[SIM_MODE_WPAC].moisture = {
     modifiers: {
         polarMoisture: 0.5,
         tropicalMoisture: 1,
-        mountainMoisture: 0
+        mountainMoisture: 1
     }
 };    
 ENV_DEFS[SIM_MODE_EXTREME].moisture = {};
