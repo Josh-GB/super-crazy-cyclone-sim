@@ -18,7 +18,8 @@ ACTIVE_ATTRIBS.defaults = [
     'organization',
     'lowerWarmCore',
     'upperWarmCore',
-    'depth'
+    'depth',
+    'kaboom'
 ];
 
 ACTIVE_ATTRIBS[SIM_MODE_EXPERIMENTAL] = [
