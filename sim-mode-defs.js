@@ -1226,15 +1226,16 @@ ENV_DEFS[SIM_MODE_WILD].moisture = {
 };
 ENV_DEFS[SIM_MODE_MEGABLOBS].moisture = {};
 ENV_DEFS[SIM_MODE_EXPERIMENTAL].moisture = {};
-ENV_DEFS[SIM_MODE_WPAC].moisture = {
+ENV_DEFS[SIM_MODE_WPAC].moisture = {};
+ENV_DEFS[SIM_MODE_EXTREME].moisture = {};
+ENV_DEFS[SIM_MODE_ULTRA].moisture = {
     modifiers: {
-        polarMoisture: 0.45,
-        tropicalMoisture: 0.77,
+        polarMoisture: 0.5,
+        tropicalMoisture: 1,
         mountainMoisture: 0
     }
 };    
-ENV_DEFS[SIM_MODE_EXTREME].moisture = {};
-ENV_DEFS[SIM_MODE_ULTRA].moisture = {};
+
 // ---- Active Storm System Algorithm ---- //
 
 const STORM_ALGORITHM = {};
