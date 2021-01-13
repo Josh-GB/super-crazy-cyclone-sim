@@ -1140,7 +1140,7 @@ ENV_DEFS[SIM_MODE_WPAC].SST = {
     modifiers: {
         peakSeasonPolarTemp: -3,
         offSeasonPolarTemp: -6,
-        offSeasonTropicsTemp: 29.8,
+        offSeasonTropicsTemp: 20.5,
         peakSeasonTropicsTemp: 34.75
     }
 };       
@@ -1226,16 +1226,15 @@ ENV_DEFS[SIM_MODE_WILD].moisture = {
 };
 ENV_DEFS[SIM_MODE_MEGABLOBS].moisture = {};
 ENV_DEFS[SIM_MODE_EXPERIMENTAL].moisture = {};
-ENV_DEFS[SIM_MODE_WPAC].moisture = {};
-ENV_DEFS[SIM_MODE_EXTREME].moisture = {};
-ENV_DEFS[SIM_MODE_ULTRA].moisture = {
+ENV_DEFS[SIM_MODE_WPAC].moisture = {
     modifiers: {
         polarMoisture: 0.5,
         tropicalMoisture: 1,
         mountainMoisture: 0
     }
 };    
-
+ENV_DEFS[SIM_MODE_EXTREME].moisture = {};
+ENV_DEFS[SIM_MODE_ULTRA].moisture = {};
 // ---- Active Storm System Algorithm ---- //
 
 const STORM_ALGORITHM = {};
