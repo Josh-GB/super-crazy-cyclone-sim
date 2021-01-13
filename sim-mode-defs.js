@@ -1425,34 +1425,74 @@ STORM_ALGORITHM.defaults.typeDetermination = function(sys,u){
 // Version number of a simulation mode's storm algorithm
 // Used for upgrading the active attribute values if needed
 
-STORM_ALGORITHM[SIM_MODE_NORMAL].version = 0;
-STORM_ALGORITHM[SIM_MODE_HYPER].version = 0;
-STORM_ALGORITHM[SIM_MODE_WILD].version = 0;
-STORM_ALGORITHM[SIM_MODE_MEGABLOBS].version = 0;
+STORM_ALGORITHM[SIM_MODE_NORMAL].version = 1;
+STORM_ALGORITHM[SIM_MODE_HYPER].version = 1;
+STORM_ALGORITHM[SIM_MODE_WILD].version = 1;
+STORM_ALGORITHM[SIM_MODE_MEGABLOBS].version = 1;
 STORM_ALGORITHM[SIM_MODE_EXPERIMENTAL].version = 1;
-STORM_ALGORITHM[SIM_MODE_WPAC].version = 0;    
-STORM_ALGORITHM[SIM_MODE_EXTREME].version = 0;  
-STORM_ALGORITHM[SIM_MODE_ULTRA].version = 0;  
+STORM_ALGORITHM[SIM_MODE_WPAC].version = 1;    
+STORM_ALGORITHM[SIM_MODE_EXTREME].version = 1;  
+STORM_ALGORITHM[SIM_MODE_ULTRA].version = 1;  
 // -- Upgrade -- //
 // Converts active attributes in case an active system is loaded after an algorithm change breaks old values
 
-// STORM_ALGORITHM[SIM_MODE_NORMAL].upgrade = function(sys,data,oldVersion){
-
-// };
-
-// STORM_ALGORITHM[SIM_MODE_HYPER].upgrade = function(sys,data,oldVersion){
-
-// };
-
-// STORM_ALGORITHM[SIM_MODE_WILD].upgrade = function(sys,data,oldVersion){
-
-// };
-
-// STORM_ALGORITHM[SIM_MODE_MEGABLOBS].upgrade = function(sys,data,oldVersion){
-
-// };
-
+STORM_ALGORITHM[SIM_MODE_NORMAL].upgrade = function(sys,data,oldVersion){
+    if(oldVersion < 1){
+        sys.organization = data.organization;
+        sys.lowerWarmCore = data.lowerWarmCore;
+        sys.upperWarmCore = data.upperWarmCore;
+        sys.depth = data.depth;
+        sys.kaboom = 0;
+    }
+STORM_ALGORITHM[SIM_MODE_HYPER].upgrade = function(sys,data,oldVersion){
+    if(oldVersion < 1){
+        sys.organization = data.organization;
+        sys.lowerWarmCore = data.lowerWarmCore;
+        sys.upperWarmCore = data.upperWarmCore;
+        sys.depth = data.depth;
+        sys.kaboom = 0;
+    }
+STORM_ALGORITHM[SIM_MODE_WILD].upgrade = function(sys,data,oldVersion){
+    if(oldVersion < 1){
+        sys.organization = data.organization;
+        sys.lowerWarmCore = data.lowerWarmCore;
+        sys.upperWarmCore = data.upperWarmCore;
+        sys.depth = data.depth;
+        sys.kaboom = 0;
+    }
+STORM_ALGORITHM[SIM_MODE_MEGABLOBS].upgrade = function(sys,data,oldVersion){
+    if(oldVersion < 1){
+        sys.organization = data.organization;
+        sys.lowerWarmCore = data.lowerWarmCore;
+        sys.upperWarmCore = data.upperWarmCore;
+        sys.depth = data.depth;
+        sys.kaboom = 0;
+    }
 STORM_ALGORITHM[SIM_MODE_EXPERIMENTAL].upgrade = function(sys,data,oldVersion){
+    if(oldVersion < 1){
+        sys.organization = data.organization;
+        sys.lowerWarmCore = data.lowerWarmCore;
+        sys.upperWarmCore = data.upperWarmCore;
+        sys.depth = data.depth;
+        sys.kaboom = 0;
+    }
+STORM_ALGORITHM[SIM_MODE_WPAC].upgrade = function(sys,data,oldVersion){
+    if(oldVersion < 1){
+        sys.organization = data.organization;
+        sys.lowerWarmCore = data.lowerWarmCore;
+        sys.upperWarmCore = data.upperWarmCore;
+        sys.depth = data.depth;
+        sys.kaboom = 0;
+    }
+STORM_ALGORITHM[SIM_MODE_EXTREME].upgrade = function(sys,data,oldVersion){
+    if(oldVersion < 1){
+        sys.organization = data.organization;
+        sys.lowerWarmCore = data.lowerWarmCore;
+        sys.upperWarmCore = data.upperWarmCore;
+        sys.depth = data.depth;
+        sys.kaboom = 0;
+    }
+STORM_ALGORITHM[SIM_MODE_ULTRA].upgrade = function(sys,data,oldVersion){
     if(oldVersion < 1){
         sys.organization = data.organization;
         sys.lowerWarmCore = data.lowerWarmCore;
