@@ -1146,19 +1146,19 @@ ENV_DEFS[SIM_MODE_WPAC].SST = {
 ENV_DEFS[SIM_MODE_EXTREME].SST = {
     version:1,
     modifiers: {
-        offSeasonPolarTemp: 750,
-        peakSeasonPolarTemp: -750,
-        offSeasonTropicsTemp: -750,
-        peakSeasonTropicsTemp: 750
+        offSeasonPolarTemp: 1000,
+        peakSeasonPolarTemp: -500,
+        offSeasonTropicsTemp: -500,
+        peakSeasonTropicsTemp: 1000
     }
 };
 ENV_DEFS[SIM_MODE_ULTRA].SST = {
     version:1,
     modifiers: {
-        offSeasonPolarTemp: 2500,
+        offSeasonPolarTemp: 5000,
         peakSeasonPolarTemp: -2500,
         offSeasonTropicsTemp: -2500,
-        peakSeasonTropicsTemp: 2500
+        peakSeasonTropicsTemp: 5000
     }
 };
 // -- moisture -- //
