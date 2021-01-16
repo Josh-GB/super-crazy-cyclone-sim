@@ -509,7 +509,7 @@ SPAWN_RULES[SIM_MODE_EXPERIMENTAL].archetypes = {
         lowerWarmCore: 1,
         upperWarmCore: 1,
         depth: 0,
-        kaboom: 0.75
+        kaboom: 0.2
     },
     'l': {
         inherit: 'tw',
@@ -526,7 +526,7 @@ SPAWN_RULES[SIM_MODE_EXPERIMENTAL].archetypes = {
     }
 };
 
-SPAWN_RULES[SIM_MODE_EXPERIMENTAL].doSpawn = SPAWN_RULES[SIM_MODE_HYPER].doSpawn;
+SPAWN_RULES[SIM_MODE_EXPERIMENTAL].doSpawn = SPAWN_RULES[SIM_MODE_ULTRA].doSpawn;
 
 SPAWN_RULES[SIM_MODE_EXTREME].archetypes = {
     'tw': {
