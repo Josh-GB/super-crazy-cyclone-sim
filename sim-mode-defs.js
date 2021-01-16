@@ -1,4 +1,4 @@
-const SIMULATION_MODES = ['Normal','Hyper','Wild','Megablobs','Experimental','West Pacific','Extreme','Ultra']; // Labels for sim mode selector UI
+const SIMULATION_MODES = ['Normal','Hyper','Wild','Megablobs','Ultra Kaboom','West Pacific','Extreme','Ultra']; // Labels for sim mode selector UI
 const SIM_MODE_NORMAL = 0;
 const SIM_MODE_HYPER = 1;
 const SIM_MODE_WILD = 2;
@@ -461,7 +461,7 @@ SPAWN_RULES[SIM_MODE_EXTREME].doSpawn = function(b){
     if(random()<0.01-0.002*seasonalSine(b.tick)) b.spawnArchetype('ex');      
 };		
 SPAWN_RULES[SIM_MODE_ULTRA].doSpawn = function(b){
-    if(random()<(100*sq((seasonalSine(b.tick)+1)/2)+0.002)) b.spawnArchetype('tw');
+    if(random()<(8*sq((seasonalSine(b.tick)+1)/2)+0.002)) b.spawnArchetype('tw');
 
     if(random()<0.01-0.002*seasonalSine(b.tick)) b.spawnArchetype('ex');
 };
@@ -509,20 +509,20 @@ SPAWN_RULES[SIM_MODE_EXPERIMENTAL].archetypes = {
         lowerWarmCore: 1,
         upperWarmCore: 1,
         depth: 0,
-        kaboom: 0.2
+        kaboom: 0.75
     },
     'l': {
         inherit: 'tw',
         pressure: 1015,
         windSpeed: 15,
         organization: 0.2,
-        kaboom: 0.2
+        kaboom: 0.75
     },
     'x': {
         inherit: 'ex',
         pressure: 1005,
         windSpeed: 15,
-        kaboom: 0.2
+        kaboom: 0.75
     }
 };
 
@@ -1114,10 +1114,10 @@ ENV_DEFS[SIM_MODE_MEGABLOBS].SST = {
 ENV_DEFS[SIM_MODE_EXPERIMENTAL].SST = {
     version:1,
     modifiers: {
-        offSeasonPolarTemp: 2000,
-        peakSeasonPolarTemp: 1000,
-        offSeasonTropicsTemp: 1000,
-        peakSeasonTropicsTemp: 2000
+        offSeasonPolarTemp: 5000,
+        peakSeasonPolarTemp: 2500,
+        offSeasonTropicsTemp: 2500,
+        peakSeasonTropicsTemp: 5000
     }
 };
 ENV_DEFS[SIM_MODE_WPAC].SST = {
