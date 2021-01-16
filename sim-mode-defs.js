@@ -1,4 +1,4 @@
-const SIMULATION_MODES = ['Normal','Hyper','Wild','Megablobs','Experimental','West Pacific','Extreme','Ultra']; // Labels for sim mode selector UI
+const SIMULATION_MODES = ['Normal','Hyper','Wild','Megablobs','Ultra Kaboom Edition','West Pacific','Extreme','Ultra']; // Labels for sim mode selector UI
 const SIM_MODE_NORMAL = 0;
 const SIM_MODE_HYPER = 1;
 const SIM_MODE_WILD = 2;
@@ -516,13 +516,13 @@ SPAWN_RULES[SIM_MODE_EXPERIMENTAL].archetypes = {
         pressure: 1015,
         windSpeed: 15,
         organization: 0.2,
-        kaboom: 0.75
+        kaboom: 0.2
     },
     'x': {
         inherit: 'ex',
         pressure: 1005,
         windSpeed: 15,
-        kaboom: 0.75
+        kaboom: 0.2
     }
 };
 
