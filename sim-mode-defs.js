@@ -461,7 +461,7 @@ SPAWN_RULES[SIM_MODE_EXTREME].doSpawn = function(b){
     if(random()<0.01-0.002*seasonalSine(b.tick)) b.spawnArchetype('ex');      
 };		
 SPAWN_RULES[SIM_MODE_ULTRA].doSpawn = function(b){
-    if(random()<(5*sq((seasonalSine(b.tick)+1)/2)+0.002)) b.spawnArchetype('tw');
+    if(random()<(8*sq((seasonalSine(b.tick)+1)/2)+0.002)) b.spawnArchetype('tw');
 
     if(random()<0.01-0.002*seasonalSine(b.tick)) b.spawnArchetype('ex');
 };
@@ -1114,10 +1114,10 @@ ENV_DEFS[SIM_MODE_MEGABLOBS].SST = {
 ENV_DEFS[SIM_MODE_EXPERIMENTAL].SST = {
     version:1,
     modifiers: {
-        offSeasonPolarTemp: 7500,
+        offSeasonPolarTemp: 10000,
         peakSeasonPolarTemp: 5000,
         offSeasonTropicsTemp: 5000,
-        peakSeasonTropicsTemp: 7500
+        peakSeasonTropicsTemp: 10000
     }
 };
 ENV_DEFS[SIM_MODE_WPAC].SST = {
@@ -1195,7 +1195,7 @@ ENV_DEFS.defaults.moisture = {
     modifiers: {
         polarMoisture: 0.42,
         tropicalMoisture: 0.59,
-        mountainMoisture: 0.59
+        mountainMoisture: 0.19
     },
     noiseChannels: [
         [4,0.5,120,120,0.3,2]
@@ -1206,7 +1206,7 @@ ENV_DEFS[SIM_MODE_HYPER].moisture = {
     modifiers: {
         polarMoisture: 0.52,
         tropicalMoisture: 0.62,
-        mountainMoisture: 0.62
+        mountainMoisture: 0.3
     }
 };
 ENV_DEFS[SIM_MODE_WILD].moisture = {
@@ -1230,7 +1230,7 @@ ENV_DEFS[SIM_MODE_WPAC].moisture = {
     modifiers: {
         polarMoisture: 0.5,
         tropicalMoisture: 1,
-        mountainMoisture: 1
+        mountainMoisture: 0
     }
 };    
 ENV_DEFS[SIM_MODE_EXTREME].moisture = {};
