@@ -461,7 +461,7 @@ SPAWN_RULES[SIM_MODE_EXTREME].doSpawn = function(b){
     if(random()<0.01-0.002*seasonalSine(b.tick)) b.spawnArchetype('ex');      
 };		
 SPAWN_RULES[SIM_MODE_ULTRA].doSpawn = function(b){
-    if(random()<(8*sq((seasonalSine(b.tick)+1)/2)+0.002)) b.spawnArchetype('tw');
+    if(random()<(5*sq((seasonalSine(b.tick)+1)/2)+0.002)) b.spawnArchetype('tw');
 
     if(random()<0.01-0.002*seasonalSine(b.tick)) b.spawnArchetype('ex');
 };
@@ -1114,10 +1114,10 @@ ENV_DEFS[SIM_MODE_MEGABLOBS].SST = {
 ENV_DEFS[SIM_MODE_EXPERIMENTAL].SST = {
     version:1,
     modifiers: {
-        offSeasonPolarTemp: 10000,
-        peakSeasonPolarTemp: 5000,
-        offSeasonTropicsTemp: 5000,
-        peakSeasonTropicsTemp: 10000
+        offSeasonPolarTemp: 1000,
+        peakSeasonPolarTemp: 500,
+        offSeasonTropicsTemp: 500,
+        peakSeasonTropicsTemp: 1000
     }
 };
 ENV_DEFS[SIM_MODE_WPAC].SST = {
