@@ -19,7 +19,6 @@ ACTIVE_ATTRIBS.defaults = [
     'lowerWarmCore',
     'upperWarmCore',
     'depth',
-    'kaboom'
 ];
 
 ACTIVE_ATTRIBS[SIM_MODE_EXPERIMENTAL] = [
@@ -386,7 +385,7 @@ SPAWN_RULES[SIM_MODE_NORMAL].doSpawn = SPAWN_RULES.defaults.doSpawn;
 // -- Hyper Mode -- //
 
 SPAWN_RULES[SIM_MODE_HYPER].doSpawn = function(b){
-    if(random()<(0.013*sq((seasonalSine(b.tick)+1)/2)+0.002)) b.spawnArchetype('tw');
+    if(random()<(0.05*sq((seasonalSine(b.tick)+1)/2)+0.002)) b.spawnArchetype('tw');
 
     if(random()<0.01-0.002*seasonalSine(b.tick)) b.spawnArchetype('ex');
 };
@@ -461,7 +460,7 @@ SPAWN_RULES[SIM_MODE_EXTREME].doSpawn = function(b){
     if(random()<0.01-0.002*seasonalSine(b.tick)) b.spawnArchetype('ex');      
 };		
 SPAWN_RULES[SIM_MODE_ULTRA].doSpawn = function(b){
-    if(random()<(5*sq((seasonalSine(b.tick)+1)/2)+0.002)) b.spawnArchetype('tw');
+    if(random()<(8*sq((seasonalSine(b.tick)+1)/2)+0.002)) b.spawnArchetype('tw');
 
     if(random()<0.01-0.002*seasonalSine(b.tick)) b.spawnArchetype('ex');
 };
@@ -509,24 +508,24 @@ SPAWN_RULES[SIM_MODE_EXPERIMENTAL].archetypes = {
         lowerWarmCore: 1,
         upperWarmCore: 1,
         depth: 0,
-        kaboom: 0.2
+        kaboom: 0.75
     },
     'l': {
         inherit: 'tw',
         pressure: 1015,
         windSpeed: 15,
         organization: 0.2,
-        kaboom: 0.2
+        kaboom: 0.5
     },
     'x': {
         inherit: 'ex',
         pressure: 1005,
         windSpeed: 15,
-        kaboom: 0.2
+        kaboom: 0.25
     }
 };
 
-SPAWN_RULES[SIM_MODE_EXPERIMENTAL].doSpawn = SPAWN_RULES[SIM_MODE_ULTRA].doSpawn;
+SPAWN_RULES[SIM_MODE_EXPERIMENTAL].doSpawn = SPAWN_RULES[SIM_MODE_HYPER].doSpawn;
 
 SPAWN_RULES[SIM_MODE_EXTREME].archetypes = {
     'tw': {
