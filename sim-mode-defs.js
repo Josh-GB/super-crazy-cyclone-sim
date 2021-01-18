@@ -1431,7 +1431,7 @@ STORM_ALGORITHM[SIM_MODE_MEGABLOBS].version = 0;
 STORM_ALGORITHM[SIM_MODE_EXPERIMENTAL].version = 1;
 STORM_ALGORITHM[SIM_MODE_WPAC].version = 0;    
 STORM_ALGORITHM[SIM_MODE_EXTREME].version = 0;  
-STORM_ALGORITHM[SIM_MODE_HOT].version = 0;  
+STORM_ALGORITHM[SIM_MODE_ULTRA].version = 0;  
 // -- Upgrade -- //
 // Converts active attributes in case an active system is loaded after an algorithm change breaks old values
 
