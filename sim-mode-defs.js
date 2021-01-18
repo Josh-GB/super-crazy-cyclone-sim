@@ -1,4 +1,4 @@
-const SIMULATION_MODES = ['Normal','Hyper','Wild','Megablobs','Experimental','West Pacific','Extreme','Ultra']; // Labels for sim mode selector UI
+const SIMULATION_MODES = ['Totally Normal','Ultra Hyper','Crazy Wild','Mega Hyper','Crazy Experimental','West Pacific','Super Extreme','Ultra Mega Extreme']; // Labels for sim mode selector UI
 const SIM_MODE_NORMAL = 0;
 const SIM_MODE_HYPER = 1;
 const SIM_MODE_WILD = 2;
@@ -18,7 +18,8 @@ ACTIVE_ATTRIBS.defaults = [
     'organization',
     'lowerWarmCore',
     'upperWarmCore',
-    'depth',
+    'depth'
+    'kaboom'
 ];
 
 ACTIVE_ATTRIBS[SIM_MODE_EXPERIMENTAL] = [
@@ -372,7 +373,7 @@ SPAWN_RULES.defaults.archetypes = {
 
 SPAWN_RULES.defaults.doSpawn = function(b){
     // tropical waves
-    if(random()<0.00625*sq((seasonalSine(b.tick)+1)/2)) b.#type('tw');
+    if(random()<0.03*sq((seasonalSine(b.tick)+1)/2)) b.spawnArchetype('tw');
 
     // extratropical cyclones
     if(random()<0.01-0.002*seasonalSine(b.tick)) b.spawnArchetype('ex');
@@ -407,7 +408,7 @@ SPAWN_RULES[SIM_MODE_WILD].archetypes = {
 };
 
 SPAWN_RULES[SIM_MODE_WILD].doSpawn = function(b){
-    if(random()<0.015) b.spawnArchetype('tw');
+    if(random()<0.08) b.spawnArchetype('tw');
     if(random()<0.01-0.002*seasonalSine(b.tick)) b.spawnArchetype('ex');
 };
 
@@ -460,7 +461,7 @@ SPAWN_RULES[SIM_MODE_EXTREME].doSpawn = function(b){
     if(random()<0.01-0.002*seasonalSine(b.tick)) b.spawnArchetype('ex');      
 };		
 SPAWN_RULES[SIM_MODE_ULTRA].doSpawn = function(b){
-    if(random()<(8*sq((seasonalSine(b.tick)+1)/2)+0.002)) b.spawnArchetype('tw');
+    if(random()<(5*sq((seasonalSine(b.tick)+1)/2)+0.002)) b.spawnArchetype('tw');
 
     if(random()<0.01-0.002*seasonalSine(b.tick)) b.spawnArchetype('ex');
 };
@@ -468,7 +469,7 @@ SPAWN_RULES[SIM_MODE_ULTRA].doSpawn = function(b){
 // -- Megablobs Mode -- //
 
 SPAWN_RULES[SIM_MODE_MEGABLOBS].doSpawn = function(b){
-    if(random()<(0.013*sq((seasonalSine(b.tick)+1)/2)+0.002)) b.spawnArchetype('tw');
+    if(random()<(0.03*sq((seasonalSine(b.tick)+1)/2)+0.002)) b.spawnArchetype('tw');
 
     if(random()<0.01-0.002*seasonalSine(b.tick)) b.spawnArchetype('ex');
 };
@@ -508,20 +509,20 @@ SPAWN_RULES[SIM_MODE_EXPERIMENTAL].archetypes = {
         lowerWarmCore: 1,
         upperWarmCore: 1,
         depth: 0,
-        kaboom: 0.75
+        kaboom: 0.2
     },
     'l': {
         inherit: 'tw',
         pressure: 1015,
         windSpeed: 15,
         organization: 0.2,
-        kaboom: 0.5
+        kaboom: 0.2
     },
     'x': {
         inherit: 'ex',
         pressure: 1005,
         windSpeed: 15,
-        kaboom: 0.25
+        kaboom: 0.2
     }
 };
 
@@ -1098,7 +1099,7 @@ ENV_DEFS[SIM_MODE_WILD].SST = {
         if(y<0) return 0;
         let anom = u.field('SSTAnomaly');
         let s = u.yearfrac(z);
-        let t = u.piecewise(s,[[0,22],[2,25.5],[4,25],[5,26.5],[6,27],[6.25,30],[6.75,31],[7,28],[9,27],[10,26],[11,23]]);
+        let t = u.piecewise(s,[[130,57],[87,94.5],[45,84],[55,86.5],[235,57],[22,120],[66.75,41],[77,280],[99,67],[100,260],[110,78]]);
         return t+anom;
     }
 };
@@ -1113,10 +1114,10 @@ ENV_DEFS[SIM_MODE_MEGABLOBS].SST = {
 ENV_DEFS[SIM_MODE_EXPERIMENTAL].SST = {
     version:1,
     modifiers: {
-        offSeasonPolarTemp: 1000,
-        peakSeasonPolarTemp: 500,
-        offSeasonTropicsTemp: 500,
-        peakSeasonTropicsTemp: 1000
+        offSeasonPolarTemp: 400,
+        peakSeasonPolarTemp: -150,
+        offSeasonTropicsTemp: -250,
+        peakSeasonTropicsTemp: 250
     }
 };
 ENV_DEFS[SIM_MODE_WPAC].SST = {
@@ -1139,16 +1140,16 @@ ENV_DEFS[SIM_MODE_WPAC].SST = {
     modifiers: {
         peakSeasonPolarTemp: -3,
         offSeasonPolarTemp: -6,
-        offSeasonTropicsTemp: 20.5,
-        peakSeasonTropicsTemp: 34.75
+        offSeasonTropicsTemp: 20,
+        peakSeasonTropicsTemp: 34.5
     }
 };       
 ENV_DEFS[SIM_MODE_EXTREME].SST = {
     version:1,
     modifiers: {
         offSeasonPolarTemp: 1000,
-        peakSeasonPolarTemp: 500,
-        offSeasonTropicsTemp: 500,
+        peakSeasonPolarTemp: -500,
+        offSeasonTropicsTemp: -500,
         peakSeasonTropicsTemp: 1000
     }
 };
@@ -1227,7 +1228,7 @@ ENV_DEFS[SIM_MODE_MEGABLOBS].moisture = {};
 ENV_DEFS[SIM_MODE_EXPERIMENTAL].moisture = {};
 ENV_DEFS[SIM_MODE_WPAC].moisture = {
     modifiers: {
-        polarMoisture: 0.5,
+        polarMoisture: 1,
         tropicalMoisture: 1,
         mountainMoisture: 0
     }
